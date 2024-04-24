@@ -4,28 +4,28 @@
 #04/24/24
 
 
-cnt = 0
-cnt2 = 0
-cnt3 = 0
+depthNum = 0
+quote = 0
+comment = 0
 file = "example.txt"
 with open(file, "r") as file:
     for line in file:
         for char in line:
-            if cnt3 > 1:
-                cnt3 = 0
+            if comment > 1:
+                comment = 0
                 break
             if char == '"':
-                if cnt2 == 0:
-                    cnt2 += 1
+                if quote == 0:
+                    quote += 1
                     break
                 else:
-                    cnt2 -= 1
+                    quote -= 1
                     break
             if char == '/':
-                cnt3 +=1
+                comment +=1
                 break
             if char == "{":
-                cnt += 1
+                depthNum += 1
             elif char == "}":
-                cnt -= 1
-        print(str(cnt) + " " + line)
+                depthNum -= 1
+        print(str(depthNum) + " " + line)
