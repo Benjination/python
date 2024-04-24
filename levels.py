@@ -5,7 +5,7 @@
 
 
 depthNum = 0
-quote = 0
+quote = False
 comment = 0
 file = "example.txt"
 with open(file, "r") as file:
@@ -15,11 +15,11 @@ with open(file, "r") as file:
                 comment = 0
                 break
             if char == '"':
-                if quote == 0:
-                    quote += 1
+                if quote == False:
+                    quote = True
                     break
                 else:
-                    quote -= 1
+                    quote = False
                     break
             if char == '/':
                 comment +=1
