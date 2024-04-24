@@ -6,8 +6,8 @@
 def calculate(line):
     operators = set(['+', '-', '*', '/'])
     stack = []
-    
-    for token in line:                   #Goes through every token in line
+    tokens = line.split('%')
+    for token in tokens:                   #Goes through every token in line
         if token not in operators:       #Token is an integer
             stack.append(int(token))     #Throw it on the stack
         else:                            #Found first operator
@@ -33,6 +33,6 @@ file = "input_RPN.txt"                   #Hardcoded
 with open(file, 'r') as f:
     for line in f:                        #Sends input one line at a time
         line = line.replace("\n","")      #Removes Linebreak from the end of the line
-        line = line.replace(" ","")       #Removes Spaces
+        line = line.replace(" ","%")       #Removes Spaces
         result = calculate(line)          
         print("Result:", result)
