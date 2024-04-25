@@ -12,6 +12,8 @@ class Foo
           int a = 1;
           // as is this: }         
        } // what if this were on one line?  }}}
+       /* {{{
+       }}}*/
     }
 }
 //end of program
