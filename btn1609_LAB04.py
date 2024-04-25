@@ -39,3 +39,8 @@ with open(file, "r") as file:
             elif char == "}" and silent == False:
                     depthNum -= 1
         print(str(depthNum) + " " + line)
+    if depthNum  < 0:
+        print("ERROR: Extraneous Closing Bracket")
+    elif depthNum > 0:
+        print("ERROR: Expected closing bracket but found EOF")
+    
