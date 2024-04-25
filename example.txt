@@ -10,7 +10,7 @@ class Foo
        {
           // also ignored: {
           int a = 1;
-          // as is this: }         
+          // as is this: }   
        } // what if this were on one line?  }}}
        /* {{{
        }}}*/

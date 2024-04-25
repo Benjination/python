@@ -13,14 +13,13 @@ with open(file, "r") as file:
     for line in file:                          #Checks each line one at a a time
         index = -1                             #Starts -1 at each line start and iterates to 0 for first char
         for char in line:                      #Checks each char in line
-            index += 1
+            index += 1                         #Tracks the index of the char being checked
             if char == '*':                    #Could be the first symbol of unsilence
                 if line[index + 1] == '/':     #Checks if next symbol unsilences
                     silent = False             #Sets silent to false if conditions are met
                     break                      #Breaks to next char in line
             if comment > 1:                    #Checks if // is active for line
-                comment = 0                    #Resets comment
-                break                          #Breaks to new line
+                comment = 0                    #Resets comment                       #Breaks to new line
             if char == '"':                    #Checks if symbol is begin or end of quote
                 if quote == False:             #If false, is beginning of quote
                     quote = True               #Sets quote to true
@@ -38,5 +37,5 @@ with open(file, "r") as file:
             if char == "{" and silent == False:
                 depthNum += 1
             elif char == "}" and silent == False:
-                depthNum -= 1
+                    depthNum -= 1
         print(str(depthNum) + " " + line)
